@@ -14,3 +14,17 @@ function updateCounters() {
   var uncompletedTodos = totalTodos - completedTodos;
   todoCount.innerHTML = uncompletedTodos;
 }
+
+function toggleDone() {
+  var checkbox = this;
+
+  // check the checked status of the checkbox
+  if (checkbox.checked) {
+    // the "completed" class is set on the parent element, the <li>
+    checkbox.parentElement.className = "todo completed";
+  } else {
+    checkbox.parentElement.className = "todo";
+  }
+
+  updateCounters();
+}
